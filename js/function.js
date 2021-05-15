@@ -63,5 +63,15 @@ function squareEquation (a, b, c) {
         return "No rational roots";       
     }
    
-}
+};
+
+//function expression
+const sum2 = function(a, b) {
+    returm (a + b);
+};
+
+const pow4 = function(x) {
+    return (Math.pow(x,4));
+};
+
 

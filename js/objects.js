@@ -98,3 +98,42 @@ function PersonInfo (name, nickname, age, male) {
 
 const human = new PersonInfo('James', '007', 35, true);
 console.log('persinInfo:>>', human);
+
+/******************** */
+ const sparrow = {
+     name: 'Jack',
+     age: 2,
+     fly() {
+         console.log('Fly-fly! ' + this.name);
+     },
+     rename(newName) {
+         this.name = newName;
+     }
+ }
+console.log('test method');
+sparrow.fly();
+console.log('old name:>>', sparrow)
+console.log('test rename method');
+console.log('old name:>>', sparrow);
+sparrow.rename('New Jack');
+console.log('new name:>>', sparrow)
+
+
+const sparrowChild = {
+    name: 'Jack Junior',
+    age: 1,
+
+}
+//добавление метода или свойства к существующему объекту
+sparrowChild.mother = 'Sparrow mother';
+//копируем функцию во второй объект
+sparrowChild.fly = sparrow.fly; 
+console.log('test child method');
+sparrowChild.fly();
+
+function Monkey (name) {
+    this.name = name;
+}
+
+const monkey1 = new Monkey('King Kong');
+const monkey2 = new Monkey('King Kong Jr');
