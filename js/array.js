@@ -125,4 +125,24 @@ function arrStr(accumulator, item) {
 }
 console.log('result join from reduce :>> ', resultStr);
 
+//isArray
+const a=2;
+console.log('Array.isArray(a) :>> ', Array.isArray(a));
+console.log('Array.isArray(arr7) :>> ', Array.isArray(arr7));
+
+//slice
+const arr8 = [1, 2, 4, 6, 8];
+const arr9 = arr8.slice(1);
+console.log('arr8 :>> ', arr8); //ctrl+c
+console.log('arr9 :>> ', arr9); // ctrl+v
+
+//splice
+const arr10 = arr8.splice(2, 2);
+console.log('arr8 :>> ', arr8); //ctrl+x
+console.log('arr10 :>> ', arr10); //ctrl+v
+
+
+
+
+
 
