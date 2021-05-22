@@ -9,6 +9,15 @@ function User (name, surname, age, isMale, email, isSubscribe) {
     this.isSubscribe = isSubscribe;
 }
 
+const userProto = new User();
+
+userProto.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`; 
+}
+
+User.prototype = userProto;
+
+
 const users = [];
 
 for (let i = 0; i < 100; i++) {
@@ -55,3 +64,14 @@ console.table(userEmails);
 //получить массив емейлов только женщин
 const womanEmails = users.filter(isWoman).map(getEmail);
 console.table(womanEmails);
+
+//add to homework
+// 1.2 Получить массив полных имен лиц женского пола школьного возраста (6 - 18 лет).
+
+function isSchoolgirl (user) {
+    return !user.isMale && user.age >= 6 && user.age <= 18;
+}
+
+const userSchoolgirl = users.filter(isSchoolgirl).map(user => user.getFullName());
+console.log('Show full name for schoolgirl :>> ');
+console.table(userSchoolgirl);

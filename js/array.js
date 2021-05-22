@@ -96,3 +96,33 @@ console.log('arr6.every(isEven) :>>', arr6.every(isEven));
 const arrEvenItem = arr6.filter(isEven);
 const arrOddItem = arr6.filter(isOdd);
 
+//join
+const pets = ['cat', 'dog', 'parrot'];
+console.log(`All my pets :>> ${pets.join(', ')}`);
+
+//reduce
+const arr7 = [1, 2, 3, 4, 5];
+const result = arr7.reduce(arrSum);
+
+function arrSum(accumulator, item) {
+    return accumulator + item;
+}
+
+console.log('result sum :>> ', result);
+
+const resultM = arr7.reduce(arrMult);
+
+function arrMult(accumulator, item) {
+    return accumulator * item;
+}
+
+console.log('result sum :>> ', resultM);
+
+const resultStr = pets.reduce(arrStr);
+
+function arrStr(accumulator, item) {
+    return accumulator + ', ' + item;
+}
+console.log('result join from reduce :>> ', resultStr);
+
+
