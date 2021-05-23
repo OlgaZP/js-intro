@@ -42,3 +42,32 @@ try {
     console.error(err);
 }
 console.log('after f :>> ');
+
+/**************** */
+//v - number, v>=0, v<=150
+function validateValue(v) {
+    if (typeof v !== 'number') {
+        throw new TypeError('The argument must be a number');
+    }
+    if (v < 0 || v > 150) {
+        throw new RangeError('The argument only from 0 to 150');
+    }
+    console.log(`Confratularions! Your input value is ${v}`);
+}
+
+console.log('before validation :>> ');
+const inputValue = 'aa';
+try {
+    const value = validateValue(inputValue);
+    console.log('correct value is :>> ', inputValue);
+} catch (err) {
+    if (err instanceof TypeError) {
+        alert('Please, input a number value!');
+    }
+    if (err instanceof RangeError) {
+        alert('Please, input value between 0 and 150');
+    }
+    console.error(err instanceof RangeError);
+}
+
+console.log('after validation :>> ');
