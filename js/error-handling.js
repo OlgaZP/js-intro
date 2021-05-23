@@ -16,6 +16,8 @@ try {
     //перехват ошибки
     console.dir(error);
 
+} finally {
+    console.log('in finally :>> ');
 }
 
 console.log('after try :>> ');
@@ -68,6 +70,6 @@ try {
         alert('Please, input value between 0 and 150');
     }
     console.error(err instanceof RangeError);
-}
+} 
 
 console.log('after validation :>> ');
