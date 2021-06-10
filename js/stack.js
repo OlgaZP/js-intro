@@ -75,3 +75,36 @@ console.log('checkBracketSequence(\'\') :>> ', checkBracketSequence(''));
 console.log('checkBracketSequence(\'(fghf(fdbfg)\') :>> ', checkBracketSequence('(fghf(fdbfg)'));
 console.log('checkBracketSequence(\'(fghffdbf)g)\') :>> ', checkBracketSequence('(fghffdbf)g)'));
 console.log('checkBracketSequence(\'(fg((hff)db)fg)\') :>> ', checkBracketSequence('(fghffdbfg)'));
+
+//домашнее задание: функция проверяет является ли строка палиндромом
+
+console.group('Testing palindrom with stack');
+
+function palindrom(str) {
+    const palindromStack = new Stack();
+    const strLowCaseWithouSpase = str.toLowerCase().replace(/\s+/g, '');
+    const firstPart = strLowCaseWithouSpase.substring(0, Math.trunc(strLowCaseWithouSpase.length / 2));
+    const secondPart = strLowCaseWithouSpase.substring(Math.round(strLowCaseWithouSpase.length / 2), strLowCaseWithouSpase.length); 
+    
+    for (const ch of firstPart) {
+        palindromStack.push(ch);
+        continue;
+    }
+    for (const ch of secondPart) {
+        if (ch === palindromStack.pop()) {
+            continue;
+        }       
+        break;
+    }
+    return palindromStack.isEmpty;
+}
+
+console.log('palindrom(\'tenet\') :>> ', palindrom('tenet'));
+console.log('palindrom(\'guest\') :>> ', palindrom('guest'));
+console.log('palindrom(\'Saippuakivikauppias\') :>> ', palindrom('Saippuakivikauppias'));
+console.log('palindrom(\'tenettt\') :>> ', palindrom('tenettt'));
+console.log('palindrom(\'any word not palindrom\') :>> ', palindrom('any word not palindrom'));
+console.log('palindrom(\'А роза упала на лапу Азора\') :>> ', palindrom('А роза упала на лапу Азора'));
+console.log('palindrom(\'Лёша на полке клопа нашёл\') :>> ', palindrom('Лёша на полке клопа нашёл'));
+
+console.groupEnd();
